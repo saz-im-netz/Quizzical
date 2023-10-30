@@ -1,0 +1,14 @@
+figma link: https://www.figma.com/file/E9S5iPcm10f0RIHK8mCqKL/Quizzical-App?node-id=0%3A1
+api link: https://opentdb.com/api_config.php
+html entities: https://www.npmjs.com/package/html-entities#user-content-decodetext-options
+
+requirements:
+    two screens: start and questions
+    pull 5 questions from API
+    tally correct answers after check answers is clicked
+    style and polish
+
+hints:
+    use Html entities to decode answer format from api
+    new array with all answers: insert correct one randomly
+    limit answser choice to 1 and style selected answer: radio inputs form (same name attributes) check how to style to look like a button

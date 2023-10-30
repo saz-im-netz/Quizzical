@@ -1,0 +1,81 @@
+.Game{
+    position: relative;
+
+    height: 45em;
+    width: 55em;
+    padding-top: 60px;
+    border: 1px solid #293264;
+    box-shadow: 22px 12px 2px 1px #ffedd1; 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    font-size: 0.9em;
+}
+
+.corner{
+    position: absolute;
+}
+
+.right{
+    top: 0;
+    right: 0;
+}
+
+.left{
+    left: 0;
+    bottom: 0;
+}
+
+.submit--btn, 
+.restart--btn{
+    margin-top: 0.25em;
+}
+.submit--btn:disabled{
+    cursor: default;
+    background-color: #97a0d1;
+}
+
+.restart--btn{
+    width: 9em;
+    height: 3em;
+    line-height: 12px;
+}
+
+.restart--container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.btn--container{
+    display: flex;
+    justify-content: center;
+}
+
+.stats--container{
+    display: flex;
+    justify-content: space-between;
+
+    width: 80%;
+    position: absolute;
+    top: 8%;
+
+}
+
+.stats--container > h3 {  
+    color:#97a0d1;
+    letter-spacing: -1.2px;
+    word-spacing: 2px;
+}
+
+.stats--container > h3 > span {
+    color:#293264;
+    letter-spacing: 1.1px;
+    word-spacing: -2px;
+}

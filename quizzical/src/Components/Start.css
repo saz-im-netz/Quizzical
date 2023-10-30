@@ -1,0 +1,72 @@
+.Start{
+    position: relative;
+
+    height: 35em;
+    width: 35em;
+    border: 1px solid #293264;
+    box-shadow: 22px 12px 2px 1px #dee2f8; 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin: 0;
+}
+
+p{
+    margin: 0.5em 0 1.2em 0;
+}
+
+button{
+    width: 12em;
+}
+
+.corner{
+    position: absolute;
+}
+
+.right{
+    top: 0;
+    right: 0;
+}
+
+.left{
+    left: 0;
+    bottom: 0;
+}
+
+.selection--container{
+    padding-bottom: 1.5em;
+    display: flex;
+    gap: 1em;
+}
+
+.select--label{
+    border: none;
+    width: 110px;
+}
+
+select{
+    display: inline-block;
+    margin-right: 0.75em;
+    margin-top: 0.5em;
+
+    background-color: #F5F7FB;
+    color: #293264;
+    border: 0.75px solid #4D5B9E;
+    border-radius: 7.75px;
+    padding: 0.25em 0.5em;
+
+    font-size: 0.75em;
+
+    cursor: pointer;
+}
+
+.selection--box{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+}
