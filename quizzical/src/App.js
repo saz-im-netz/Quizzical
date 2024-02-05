@@ -1,6 +1,5 @@
 import React from "react";
 import {v4 as uuidv4} from "uuid";
-import {decode} from "html-entities";
 import Game from "./Components/Game";
 import Start from "./Components/Start";
 import './App.css';
@@ -12,7 +11,7 @@ export default function App() {
   const[quizArray, setQuizArray] = React.useState([]);
   const[questionParameters, setQuestionParameters] = React.useState([{difficulty: "", category: ""}]);
   const[allAnswersChecked, setAllAnswersChecked]  = React.useState(false);
-  
+  const entities = require("entities");
 
   React.useEffect( ()=>{
 
@@ -34,12 +33,16 @@ export default function App() {
         const data = await response.json();
 
         setQuizArray( data.results.map(component => {
+          const decodedAnswers = component.incorrect_answers.map(answer => {
+            return entities.decodeHTML(answer);
+          })
+          const decodedCorrectAnswer = entities.decodeHTML(component.correct_answer);
             return(
                 {
                     id: uuidv4(),
-                    question: decode(component.question),
-                    answers: insertAnswerAtRandomPosition(decode(component.incorrect_answers), decode(component.correct_answer)),
-                    correctAnswer: decode(component.correct_answer),
+                    question: entities.decodeHTML(component.question),
+                    answers: insertAnswerAtRandomPosition(decodedAnswers , decodedCorrectAnswer),
+                    correctAnswer: decodedCorrectAnswer,
                     selected: ""                 
                 }
             )
@@ -51,7 +54,7 @@ export default function App() {
       getQuestions()
     }
 
-},[hasGameStarted, questionParameters]);
+},[hasGameStarted, questionParameters, entities]);
 
 function insertAnswerAtRandomPosition(arr, answer){
     let randomIndex = Math.floor( Math.random() * (arr.length + 1) );

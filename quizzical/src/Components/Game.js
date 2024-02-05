@@ -4,14 +4,11 @@ import Question from "./Question";
 import {categories} from "./data";
 import "./Game.css";
 
-export default function Game(props){
+export default function Game({quizArray, setQuizArray, restartGame, allAnswersChecked, setAllAnswersChecked, questionParameters}){
 
     const[count, setCount] = React.useState(0);
     const[gameFinished, setGameFinished] = React.useState(false);
-    const[questionEl, setQuestionEl] = React.useState([]);
-    
-
-    const {quizArray, setQuizArray, restartGame, allAnswersChecked, setAllAnswersChecked, questionParameters} = props;   
+    const[questionEl, setQuestionEl] = React.useState([]); 
 
     React.useEffect( ()=>{
 

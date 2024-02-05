@@ -3,6 +3,10 @@
     border: none;
 }
 
+.answer--wrapper{
+    display: inline-block;
+}
+
 legend{
     font-size: 1em;
     margin-bottom: 0.25em;
