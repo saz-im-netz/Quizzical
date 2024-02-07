@@ -2,7 +2,7 @@ import React from "react";
 import "./Start.css";
 
 export default function Start(props){
-const {startGame, questionParameters, setQuestionParameters} = props;
+    const {startGame, questionParameters, setQuestionParameters} = props;
 
     function handleChange(event){
         const {name, value} = event.target;
@@ -14,6 +14,8 @@ const {startGame, questionParameters, setQuestionParameters} = props;
                     parameter
         }))
     }
+    
+    
 
     return (
         <div className="Start">
@@ -44,13 +46,11 @@ const {startGame, questionParameters, setQuestionParameters} = props;
                         name="difficulty"
                         id="difficulty"
                         onChange={handleChange}
-                        value={questionParameters.difficulty}
                     >
                         <option value="">any</option>
                         <option value="easy">easy</option>
                         <option value="medium">medium</option>
                         <option value="hard">hard</option>
-                    
                     </select>
                 </div>
                 
@@ -61,7 +61,7 @@ const {startGame, questionParameters, setQuestionParameters} = props;
                         id="category"
                         onChange={handleChange}
                         value={questionParameters.category}
-                    >
+                    >                
                         <option value="">any</option>
                         <option value="9">General Knowledge</option>
                         <option value="17">Science & Nature</option>
@@ -113,10 +113,3 @@ const {startGame, questionParameters, setQuestionParameters} = props;
         </div>
     )
 }
-
-/* <select
-                id="category"
-                name="category"
-            >
-                <option value=""></option>
-            </select> */

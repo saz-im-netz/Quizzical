@@ -80,22 +80,19 @@ export default function Game({quizArray, setQuizArray, restartGame, allAnswersCh
         }
         else{
             return parameter;
-        }
+        }  
     }
 
     function getCategory(parameter){
-        if(parameter === ""){
-            return "any";
-        }
-        else{
-            let string = "h";
+        let string = "any";
+        if(parameter !== ""){
             for(let i=0; i<categories.length; i++){
                 if(parameter === categories[i].key){
                     string = categories[i].topic;
                 }
             }
-            return string;
         }
+        return string; 
     }
 
     return (
