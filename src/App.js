@@ -68,6 +68,8 @@ function insertAnswerAtRandomPosition(arr, answer){
   function restartGame(){
     setHasGameStarted(false);
     setQuestionParameters([{difficulty: "", category: ""}]);
+    setQuizArray([]);
+    setAllAnswersChecked(false);
   }
 
   return (
